@@ -1,9 +1,10 @@
 <script>
 	import { dev } from "$app/environment"
+	import { enhance } from "$app/forms"
 	import Circles from "./Circles.svelte"
 	import generate from "./etcetars"
 	import startup from "./startup.ogg?url"
-
+	
 	let username = ""
 	let pfp = "https://via.placeholder.com/100"
 
@@ -27,7 +28,7 @@
 	<audio autoplay src={startup} />
 {/if}
 
-<form>
+<form method="POST" use:enhance>
 	<h1>Who are you?</h1>
 	<label style="cursor: pointer" class="pfp">
 		<input
