@@ -1,9 +1,34 @@
 {
-	"useTabs": true,
-	"singleQuote": true,
-	"trailingComma": "none",
+	"arrowParens": "avoid",
+	"bracketSpacing": true,
+	"embeddedLanguageFormatting": "auto",
+	"endOfLine": "lf",
+	"htmlWhitespaceSensitivity": "css",
+	"insertPragma": false,
+	"bracketSameLine": true,
+	"jsxSingleQuote": false,
 	"printWidth": 100,
-	"plugins": ["prettier-plugin-svelte"],
-	"pluginSearchDirs": ["."],
-	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+	"proseWrap": "always",
+	"quoteProps": "as-needed",
+	"requirePragma": false,
+	"semi": false,
+	"singleQuote": false,
+	"tabWidth": 4,
+	"trailingComma": "es5",
+	"useTabs": true,
+	"vueIndentScriptAndStyle": false,
+	"plugins": [
+		"prettier-plugin-svelte"
+	],
+	"pluginSearchDirs": [
+		"."
+	],
+	"overrides": [
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte"
+			}
+		}
+	]
 }
