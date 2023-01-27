@@ -23,6 +23,7 @@
 
 <svelte:head>
 	<title>Welcome</title>
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 {#if !dev}
