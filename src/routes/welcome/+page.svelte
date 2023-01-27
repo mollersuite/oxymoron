@@ -3,6 +3,7 @@
 	import { enhance } from "$app/forms"
 	import Circles from "./Circles.svelte"
 	import generate from "./etcetars"
+	import Footer from "./Footer.svelte"
 	import startup from "./startup.ogg?url"
 	
 	let username = ""
@@ -60,10 +61,9 @@
 		<span>Continue</span>
 	</button>
 </form>
-<footer style="position: fixed; bottom: 10px; left: 10px; right: 10px">
-	oxymoron from Etcetera
-</footer>
-<Circles /> 
+
+<Circles />
+<Footer />
 <svg
 	height="300"
 	version="1.1"
