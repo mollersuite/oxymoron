@@ -1,11 +1,10 @@
 <script>
-	import { dev } from "$app/environment"
 	import { enhance } from "$app/forms"
 	import Circles from "./Circles.svelte"
 	import generate from "./etcetars"
 	import Footer from "./Footer.svelte"
 	import startup from "./startup.ogg?url"
-	
+
 	let username = ""
 	let pfp = "https://via.placeholder.com/100"
 
@@ -26,9 +25,7 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-{#if !dev}
-	<audio autoplay src={startup} />
-{/if}
+<audio autoplay src={startup} />
 
 <form method="POST" use:enhance>
 	<h1>Who are you?</h1>
