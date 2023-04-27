@@ -1,23 +1,7 @@
 <script>
 	import { enhance } from "$app/forms"
 	import Circles from "./Circles.svelte"
-	import generate from "./etcetars"
-	import Footer from "./Footer.svelte"
 	import startup from "./startup.ogg?url"
-
-	let username = ""
-	let pfp = "https://via.placeholder.com/100"
-
-	/** @type {FileList} */
-	let submitted_pfp
-
-	$: if (!submitted_pfp?.length) {
-		generate(username).then(svg => {
-			pfp = "data:image/svg+xml;base64," + btoa(svg)
-		})
-	} else {
-		pfp = URL.createObjectURL(submitted_pfp[0])
-	}
 </script>
 
 <svelte:head>
@@ -28,40 +12,36 @@
 <audio autoplay src={startup} />
 
 <form method="POST" use:enhance>
-	<h1>Who are you?</h1>
-	<label style="cursor: pointer" class="pfp">
-		<input
-			type="file"
-			name="profile-picture"
-			accept="image/*"
-			bind:files={submitted_pfp}
-			style="display: none" />
-		<img src={pfp} alt="Profile" height="100" width="100" style="border-radius: 10px" />
-	</label>
-	<input
-		type="text"
-		name="display-name"
-		placeholder="Display name"
-		aria-label="Display name"
-		required
-		bind:value={username} />
-	<textarea
-		name="bio"
-		placeholder="Bio - HTML, @mentions, #tags, and /internals supported!"
-		aria-label="Bio"
-		rows="10"
-		cols="30" />
-	<label>
-		Read-only mode
-		<input type="checkbox" name="read-only" />
-	</label>
-	<button>
-		<span>Continue</span>
-	</button>
+	<h1>A couple of things before we get started</h1>
+	<ul>
+		<li>
+			This is in pre-alpha. Please backup your data regularly, and do not use Oxymoron in
+			production.
+		</li>
+		<li>
+			Oxymoron is on the Fediverse. There is no authority here, which means all blue ticks are
+			fake; please verify organizations using their official websites.
+		</li>
+		<li>
+			Oxymoron is actually on the IndieWeb, and uses Bridgy Fed for bridging to the Fediverse,
+			as the real thing is very unoptimized, in fact impossible for serverless platforms such
+			as Vercel or Cloudflare Workers.
+			<br />
+			So before you begin, ask yourself if you trust Ryan Barrett, someone I had never heard of
+			prior to writing this sentence.
+		</li>
+		<li>
+			Oxymoron is self-hosted. This means even if we implement an image proxy, your IP address
+			will appear in the logs of the instances you interact with. Most of them aren't
+			assholes, though, so you should be fine.
+		</li>
+	</ul>
+	<button>Continue</button>
+	<a href="/lag">click me</a>
 </form>
 
 <Circles />
-<Footer />
+
 <svg
 	height="300"
 	version="1.1"
@@ -79,6 +59,29 @@
 </svg>
 
 <style>
+	button {
+		background-color: var(--surface0);
+		border-color: var(--surface1);
+		border-radius: 1ch;
+		border-style: solid;
+		border-width: 1px;
+		color: var(--text);
+		cursor: pointer;
+		font-weight: bold;
+		width: max-content;
+		padding-inline: 2ch;
+		padding-block: 1ch;
+		box-sizing: border-box;
+		transition: background-color 0.1s ease, transform 0.2s ease;
+	}
+	button:hover {
+		background-color: var(--surface1);
+	}
+	button:active {
+		background-color: var(--surface2);
+		transform: translateY(3px);
+	}
+
 	@keyframes bounce {
 		0% {
 			transform: translateY(0);
@@ -111,7 +114,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		max-width: 90%;
+		max-height: 50vmin;
 		height: auto;
 	}
 	form {
@@ -128,11 +131,11 @@
 		flex-direction: column;
 		align-items: stretch;
 		justify-content: stretch;
-		max-width: max-content;
-		text-align: center;
-		margin: auto;
+		max-width: 800px;
+		margin: 10vw;
 		gap: 1ch;
 	}
+
 	.intro path,
 	.intro ellipse {
 		animation: bounce 1s ease-in-out;

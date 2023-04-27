@@ -141,22 +141,14 @@
 		border-radius: 100%;
 	}
 	.circles div {
-		background: radial-gradient(50% 50% at 50% 50%, var(--mocha-text) 0%, transparent 100%);
+		background: radial-gradient(50% 50% at 50% 50%, var(--text) 0%, transparent 100%);
 	}
 	.circles svg {
-		fill: var(--mocha-base);
+		fill: var(--base);
 	}
 	@media (max-width: 1280px) {
 		.circles {
 			display: none;
-		}
-	}
-	@media (prefers-color-scheme: light) {
-		.circles svg {
-			fill: var(--latte-base);
-		}
-		.circles div {
-			background: radial-gradient(50% 50% at 50% 50%, var(--latte-text) 0%, transparent 100%);
 		}
 	}
 </style>
