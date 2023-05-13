@@ -1,10 +1,11 @@
 <script>
 	import { navigating } from "$app/stores"
-	import "$lib/mocha.css"
+	// import "$lib/mocha.css"
+	import "@mollersuite/mocha/theme.css"
 </script>
 
 {#if $navigating}
-	<div aria-hidden role="none" class="loading"  />
+	<div aria-hidden role="none" class="loading" />
 {/if}
 <slot />
 

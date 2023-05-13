@@ -1,5 +1,10 @@
 lockfileVersion: '6.0'
 
+dependencies:
+  '@mollersuite/mocha':
+    specifier: ^0.2.1
+    version: 0.2.1(svelte@3.55.0)
+
 devDependencies:
   '@sveltejs/adapter-auto':
     specifier: ^1.0.0-next.90
@@ -241,6 +246,14 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
+
+  /@mollersuite/mocha@0.2.1(svelte@3.55.0):
+    resolution: {integrity: sha512-3Pc5NNA9HCmh4Y/PovXJMiEqH+4mEvuYNkcPTJ67Xgd9Wu27xsmEYyZcOmBzUy1eKeV6QySm/JCfDASuzHQMcA==}
+    peerDependencies:
+      svelte: ^3.54.0
+    dependencies:
+      svelte: 3.55.0
+    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -961,7 +974,6 @@ packages:
   /svelte@3.55.0:
     resolution: {integrity: sha512-uGu2FVMlOuey4JoKHKrpZFkoYyj0VLjJdz47zX5+gVK5odxHM40RVhar9/iK2YFRVxvfg9FkhfVlR0sjeIrOiA==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tiny-glob@0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}

@@ -1,5 +1,8 @@
 <script>
+	// @ts-nocheck
+
 	import { enhance } from "$app/forms"
+	import { Button } from "@mollersuite/mocha"
 	import Circles from "./Circles.svelte"
 	import startup from "./startup.ogg?url"
 </script>
@@ -36,7 +39,8 @@
 			assholes, though, so you should be fine.
 		</li>
 	</ul>
-	<button>Continue</button>
+
+	<Button type="submit">Continue</Button>
 	<a href="/lag">click me</a>
 </form>
 
@@ -59,29 +63,6 @@
 </svg>
 
 <style>
-	button {
-		background-color: var(--surface0);
-		border-color: var(--surface1);
-		border-radius: 1ch;
-		border-style: solid;
-		border-width: 1px;
-		color: var(--text);
-		cursor: pointer;
-		font-weight: bold;
-		width: max-content;
-		padding-inline: 2ch;
-		padding-block: 1ch;
-		box-sizing: border-box;
-		transition: background-color 0.1s ease, transform 0.2s ease;
-	}
-	button:hover {
-		background-color: var(--surface1);
-	}
-	button:active {
-		background-color: var(--surface2);
-		transform: translateY(3px);
-	}
-
 	@keyframes bounce {
 		0% {
 			transform: translateY(0);
