@@ -4,7 +4,14 @@ import { fail } from "@sveltejs/kit"
 /** @type {import('./$types').Actions} */
 export const actions = {
 	default: () => {
-		throw redirect(301, "/")
+		redirect(301, "/");
 	},
 }
-export const csr = false
+
+/** @type {import('./$types').PageLoad} */
+export async function load() {
+	return {
+		footer: false
+	}
+}
+export const csr = true

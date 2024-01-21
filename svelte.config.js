@@ -5,14 +5,14 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		output: {
-			preloadStrategy: "preload-mjs",
+			preloadStrategy: "modulepreload",
 		},
 		inlineStyleThreshold: 1500,
-		csp: {
-			directives: {
-				"default-src": ["self"],
-			},
-		},
+		// csp: {
+		// 	directives: {
+		// 		"default-src": ["self"],
+		// 	},
+		// },
 	},
 }
 

@@ -1,38 +1,7 @@
 <script>
-
+	import CheeseOMeter from "$lib/CheeseOMeter/CheeseOMeter.svelte"
 </script>
-
-<nav>
-	<img
-		src="data:image/svg+xml;base64,CgkJPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojMzEzMjQ0OyI+CgkJCTxjaXJjbGUKCQkJCQljeD0iMTUwLjIzIgoJCQkJCWN5PSI4OC41NyIKCQkJCQlyPSIyMS42IgoJCQkJCWZpbGw9IiNjNmQwZjUiCgkJCQkJc3Ryb2tlLXdpZHRoPSIxIgoJCQkJCXRyYW5zZm9ybT0icm90YXRlKDE4IDE1MC4yMyA4OC41NykiCgkJCQkJCgkJCQkJcG9pbnRzPSIxNzEuODI5OTk5OTk5OTk5OTgsIDg4LjU3IDEzOS40MywgMTA3LjI3NjE0ODcyMTc0Mzg3IDEzOS40Mjk5OTk5OTk5OTk5OCwgNjkuODYzODUxMjc4MjU2MTIiCgkJCQkJCgoJCQkJLz4KPGNpcmNsZQoJCQkJCWN4PSIxNDcuNzIiCgkJCQkJY3k9IjE4MC4wMSIKCQkJCQlyPSIzNC42MiIKCQkJCQlmaWxsPSIjYzZkMGY1IgoJCQkJCXN0cm9rZS13aWR0aD0iMSIKCQkJCQl0cmFuc2Zvcm09InJvdGF0ZSgyMjEgMTQ3LjcyIDE4MC4wMSkiCgkJCQkJCgkJCQkJcG9pbnRzPSIxODIuMzQsIDE4MC4wMSAxMzAuNDEsIDIwOS45OTE3OTk0NzkwMTcyNiAxMzAuNDEsIDE1MC4wMjgyMDA1MjA5ODI3NSIKCQkJCQkKCgkJCQkvPgo8Y2lyY2xlCgkJCQkJY3g9IjIzMi44OCIKCQkJCQljeT0iMTkyLjgyIgoJCQkJCXI9IjIxLjYiCgkJCQkJZmlsbD0iI2M2ZDBmNSIKCQkJCQlzdHJva2Utd2lkdGg9IjEiCgkJCQkJdHJhbnNmb3JtPSJyb3RhdGUoNzcgMjMyLjg4IDE5Mi44MikiCgkJCQkJCgkJCQkJcG9pbnRzPSIyNTQuNDgsIDE5Mi44MiAyMjIuMDgsIDIxMS41MjYxNDg3MjE3NDM4OCAyMjIuMDc5OTk5OTk5OTk5OTgsIDE3NC4xMTM4NTEyNzgyNTYxMyIKCQkJCQkKCgkJCQkvPgo8Y2lyY2xlCgkJCQkJY3g9IjI0MC4yNiIKCQkJCQljeT0iMTA4Ljc4IgoJCQkJCXI9IjQ2LjY1IgoJCQkJCWZpbGw9IiNjNmQwZjUiCgkJCQkJc3Ryb2tlLXdpZHRoPSIxIgoJCQkJCXRyYW5zZm9ybT0icm90YXRlKDY2IDI0MC4yNiAxMDguNzgpIgoJCQkJCQoJCQkJCXBvaW50cz0iMjg2LjkwOTk5OTk5OTk5OTk3LCAxMDguNzggMjE2LjkzNSwgMTQ5LjE4MDA4NTA4NjU0NDA3IDIxNi45MzQ5OTk5OTk5OTk5NywgNjguMzc5OTE0OTEzNDU1OTYiCgkJCQkJCgoJCQkJLz4KPHBvbHlnb24KCQkJCQljeD0iMjE1Ljc4IgoJCQkJCWN5PSIyODEuNzIiCgkJCQkJcj0iNTYuMTQiCgkJCQkJZmlsbD0iI2M2ZDBmNSIKCQkJCQlzdHJva2Utd2lkdGg9IjEiCgkJCQkJdHJhbnNmb3JtPSJyb3RhdGUoMzA3IDIxNS43OCAyODEuNzIpIgoJCQkJCQoJCQkJCXBvaW50cz0iMjcxLjkyLCAyODEuNzIgMTg3LjcxLCAzMzAuMzM4NjY2MTY4NDU4NCAxODcuNzA5OTk5OTk5OTk5OTgsIDIzMy4xMDEzMzM4MzE1NDE2NyIKCQkJCQkKCgkJCQkvPgoJCTwvc3ZnPgoJ "
-		width="100%"
-		alt="Jack5079" />
-
-	<ul />
-</nav>
-
-<style>
-	nav {
-		top: 2.5vh;
-		height: 95vh;
-		width: 40px;
-		position: fixed;
-		left: 0;
-		display: flex;
-		justify-content: stretch;
-		align-items: center;
-		gap: 1ch;
-		flex-direction: column;
-		box-sizing: border-box;
-		background: var(--surface0);
-		border-top-right-radius: 1ch;
-		border-bottom-right-radius: 1ch;
-	}
-	ul {
-		flex-grow: 1;
-		list-style: none;
-	}
-	img {
-		border-top-right-radius: 1ch;
-	}
-</style>
+<svelte:head>
+	<title>Timelines - Oxymoron</title>
+</svelte:head>
+<CheeseOMeter />

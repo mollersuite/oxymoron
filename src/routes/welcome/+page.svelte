@@ -2,9 +2,19 @@
 	// @ts-nocheck
 
 	import { enhance } from "$app/forms"
-	import { Button } from "@mollersuite/mocha"
 	import Circles from "./Circles.svelte"
-	import startup from "./startup.ogg?url"
+	import startup from "./startup.opus?url"
+	import { page } from "$app/stores"
+
+	let account = {
+		bio: "",
+		username: "",
+	}
+
+	/** @type {import('./$types').Snapshot<string>} */ export const snapshot = {
+		capture: () => account,
+		restore: value => (account = value),
+	}
 </script>
 
 <svelte:head>
@@ -12,54 +22,35 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<audio autoplay src={startup} />
+<audio autoplay disableremoteplayback>
+	<source src={startup} media="not (prefers-reduced-motion)" />
+</audio>
 
 <form method="POST" use:enhance>
-	<h1>A couple of things before we get started</h1>
-	<ul>
-		<li>
-			This is in pre-alpha. Please backup your data regularly, and do not use Oxymoron in
-			production.
-		</li>
-		<li>
-			Oxymoron is on the Fediverse. There is no authority here, which means all blue ticks are
-			fake; please verify organizations using their official websites.
-		</li>
-		<li>
-			Oxymoron is actually on the IndieWeb, and uses Bridgy Fed for bridging to the Fediverse,
-			as the real thing is very unoptimized, in fact impossible for serverless platforms such
-			as Vercel or Cloudflare Workers.
-			<br />
-			So before you begin, ask yourself if you trust Ryan Barrett, someone I had never heard of
-			prior to writing this sentence.
-		</li>
-		<li>
-			Oxymoron is self-hosted. This means even if we implement an image proxy, your IP address
-			will appear in the logs of the instances you interact with. Most of them aren't
-			assholes, though, so you should be fine.
-		</li>
-	</ul>
-
-	<Button type="submit">Continue</Button>
-	<a href="/lag">click me</a>
+	<h1>Welcome to Oxymoron</h1>
+	<p>
+		Oxymoron is the ActivityPub software by <a href="https://cetera.uk"
+			><svg viewBox="0 0 173.8 275.72" height="20">
+				<circle cx="37.13" cy="26.43" r="21.6" />
+				<circle cx="34.62" cy="117.87" r="34.62" class="middle" />
+				<circle cx="119.78" cy="130.68" r="21.6" class="middle" />
+				<circle cx="127.16" cy="46.64" r="46.65" />
+				<circle cx="102.68" cy="219.58" r="56.14" class="bottom" />
+			</svg> Etcetera</a
+		>.
+	</p>
 </form>
 
 <Circles />
 
-<svg
-	height="300"
-	version="1.1"
-	viewBox="0 0 3.3357899 5.2916665"
-	xmlns="http://www.w3.org/2000/svg"
-	class="intro">
-	<g fill="#6acb5d">
-		<ellipse cx=".71260417" cy=".50740772" rx=".41455045" ry=".41452062" />
-		<ellipse cx="2.4404762" cy=".89524996" rx=".8953138" ry=".89524937" />
-		<ellipse class="middle" cx=".66443229" cy="2.2622149" rx=".66443217" ry=".66438437" />
-		<ellipse class="middle" cx="2.2988367" cy="2.5080464" rx=".41455045" ry=".41452062" />
-		<path
-			d="m1.9248978 3.1377972c-.3520125.0147389-.674032.2004843-.8634547.4977874-.25677356.4041233-.21625962.9292726.0994499 1.2897211.3157055.3593946.8313577.4677916 1.265454.2652045.0673499-.0310477.0968098-.1115568.0652399-.1789078-.03157-.0673551-.1115519-.0963029-.1788998-.0652452-.3257034.1525978-.7129678.0715547-.9497474-.1989044-.2373057-.2699421-.2678236-.6640661-.0741899-.9671588.1925807-.3036177.5630091-.4425355.9076535-.3420319.3451725.1005066.5824771.4167534.5824771.7761489-.000509.0016-.000509.0037 0 .0053v.1294445c0 .048396-.02577.092093-.06735.1162915-.04209.024208-.09314.024208-.1347018 0-.04209-.023678-.06788-.068405-.06735-.1162915v-.1347075c0-.2962512-.2430936-.5388303-.5388051-.5388303-.2962365 0-.5388032.2425791-.5388032.5388303 0 .2957253.2425667.5388304.5388032.5388304.1404888 0 .2678246-.056306.3641144-.1452323.03.035777.06577.066825.1073438.091043.1247028.072095.2788726.072095.4041024 0 .124704-.0720944.2015259-.2057446.2020529-.349925v-.1347071c-.00051-.4788438-.3167585-.9003298-.7761108-1.0350379-.1131278-.0326276-.2299386-.0468365-.3472754-.0415669zm.04578.8071936c.1499608 0 .2694026.1189223.2694026.2694162 0 .150494-.1194418.2694152-.2694026.2694152-.1504858 0-.2694016-.1189212-.2694016-.2694152 0-.1504939.1189158-.2694162.2694016-.2694162z" />
-	</g>
+<svg height="300" viewBox="0 0 173.8 275.72" class="intro">
+	<path
+		fill="#6acb5d"
+		d="m100.289 163.499c-18.3408.76763-35.119 10.4452-44.9885 25.9349-13.3786 21.055-11.2677 48.4154 5.18153 67.1949 16.4492 18.7247 43.3162 24.3722 65.9338 13.8173 3.50916-1.6175 5.04441-5.81204 3.3995-9.3212-1.64492-3.50916-5.81205-5.01701-9.32121-3.3995-16.9701 7.95044-37.1477 3.72848-49.4846-10.363-12.3643-14.0641-13.9544-34.6255-3.86557-50.3893 10.034-15.8186 29.3344-23.0563 47.2914-17.82 17.9844 5.23632 30.3488 21.7129 30.3488 40.4376-.0274.0823-.0274.19191 0 .27415v6.74417c0 2.52221-1.34335 4.79769-3.50916 6.05879-2.19323 1.26111-4.85252 1.26111-7.01832 0-2.19323-1.23369-3.53658-3.56399-3.50916-6.05879v-7.01832c0-15.4348-12.6659-28.0733-28.0733-28.0733-15.4348 0-28.0733 12.6384-28.0733 28.0733 0 15.4074 12.6385 28.0733 28.0733 28.0733 7.3199 0 13.9544-2.93344 18.9714-7.56663 1.56268 1.86424 3.42691 3.48175 5.59273 4.74285 6.49743 3.7559 14.5301 3.7559 21.055 0 6.49743-3.7559 10.5001-10.7194 10.5275-18.2312v-7.01832c-.0274-24.9479-16.504-46.9076-40.4376-53.9259-5.89429-1.69975-11.9805-2.43996-18.0941-2.16581zm2.38514 42.0551c7.81338 0 14.0367 6.19586 14.0367 14.0366 0 7.81337-6.22328 14.0366-14.0367 14.0366-7.84076 0-14.0366-6.22328-14.0366-14.0366 0-7.84077 6.19588-14.0366 14.0366-14.0366z" />
+	<circle cx="37.13" cy="26.43" r="21.6" fill="#6acb5d" />
+	<circle cx="127.16" cy="46.64" r="46.65" fill="#6acb5d" />
+	<circle class="middle" cx="34.62" cy="117.87" r="34.62" fill="#6acb5d" />
+	<circle class="middle" cx="119.78" cy="130.68" r="21.6" fill="#6acb5d" />
 </svg>
 
 <style>
@@ -68,7 +59,7 @@
 			transform: translateY(0);
 		}
 		50% {
-			transform: translateY(-0.3px);
+			transform: translateY(-15px);
 		}
 		100% {
 			transform: translateY(0);
@@ -98,6 +89,9 @@
 		max-height: 50vmin;
 		height: auto;
 	}
+	input::after {
+		content: attr(data-instance);
+	}
 	form {
 		animation-name: fadeout;
 		animation-duration: 0.3s;
@@ -105,20 +99,23 @@
 		animation-fill-mode: backwards;
 		animation-direction: reverse;
 		animation-timing-function: ease-out;
-	}
-	form {
+
 		font-family: sans-serif;
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
-		justify-content: stretch;
-		max-width: 800px;
-		margin: 10vw;
-		gap: 1ch;
+		justify-content: center;
 	}
-
+	@media (prefers-reduced-motion) {
+		.intro {
+			display: none;
+		}
+		form {
+			animation: none;
+		}
+	}
 	.intro path,
-	.intro ellipse {
+	.intro circle {
 		animation: bounce 1s ease-in-out;
 	}
 	.intro .middle {
@@ -126,5 +123,12 @@
 	}
 	.intro path {
 		animation-delay: 0.2s;
+	}
+	center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1ch;
+		flex-direction: row;
 	}
 </style>

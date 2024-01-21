@@ -28,15 +28,17 @@ export function GET() {
 				name: "oxymoron",
 				version: "1.0.0", // TODO: get from package.json
 			},
-			metadata: {},
+			metadata: {
+				nodeName: "Moron Center",
+				nodeDescription: "The flagship Oxymoron instance, hosted by Etcetera."
+			},
 			openRegistrations: false,
-			protocols: ["activitypub", "webmention"],
+			protocols: ["activitypub"],
 			services: {
 				inbound: [],
 				outbound: [],
 			},
 			usage: {
-				// Oxymoron is single-tenant
 				users: {
 					total: 1,
 					activeHalfyear: 1,
