@@ -20,16 +20,16 @@ svg {
 	--teal: #94e2d5;
 	--sky: #89dceb;
 	--sapphire: #74c7ec;
-	--blue: #87b0f9;
+	--blue: #89b4fa;
 	--lavender: #b4befe;
-	--text: #c6d0f5;
-	--subtext1: #b3bcdf;
-	--subtext0: #a1a8c9;
-	--overlay2: #8e95b3;
-	--overlay1: #7b819d;
-	--overlay0: #696d86;
-	--surface2: #565970;
-	--surface1: #43465a;
+	--text: #cdd6f4;
+	--subtext1: #bac2de;
+	--subtext0: #a6adc8;
+	--overlay2: #9399b2;
+	--overlay1: #7f849c;
+	--overlay0: #6c7086;
+	--surface2: #585b70;
+	--surface1: #45475a;
 	--surface0: #313244;
 	--base: #1e1e2e;
 	--mantle: #181825;
@@ -47,19 +47,19 @@ a:active {
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--rosewater: #de9584;
+		--rosewater: #dc8a78;
 		--flamingo: #dd7878;
-		--pink: #ec83d0;
+		--pink: #ea76cb;
 		--mauve: #8839ef;
 		--red: #d20f39;
 		--maroon: #e64553;
 		--peach: #fe640b;
-		--yellow: #e49320;
+		--yellow: #df8e1d;
 		--green: #40a02b;
 		--teal: #179299;
 		--sky: #04a5e5;
 		--sapphire: #209fb5;
-		--blue: #2a6ef5;
+		--blue: #1e66f5;
 		--lavender: #7287fd;
 		--text: #4c4f69;
 		--subtext1: #5c5f77;
@@ -88,7 +88,8 @@ body {
 	color: var(--text);
 }
 
-html, body {
+html,
+body {
 	min-height: 100%;
 	height: 100%;
 }
