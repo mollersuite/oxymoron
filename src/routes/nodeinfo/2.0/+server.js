@@ -30,7 +30,7 @@ export function GET() {
 			},
 			metadata: {
 				nodeName: "Moron Center",
-				nodeDescription: "The flagship Oxymoron instance, hosted by Etcetera."
+				nodeDescription: "The flagship Oxymoron instance."
 			},
 			openRegistrations: false,
 			protocols: ["activitypub"],
