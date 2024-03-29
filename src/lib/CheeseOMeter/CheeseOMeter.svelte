@@ -1,8 +1,9 @@
 <script>
-	import top from "./top.gif?url"
-	import bottom from "./bottom.gif?url"
+	import top from "./top.png?url"
+	import bottom from "./bottom.png?url"
 	import center_left from "./center_left.gif?url"
 	import center_right from "./center_right.gif?url"
+	export let level = 0
 </script>
 
 <div>
@@ -10,7 +11,12 @@
 	<ul>
 		<img alt="" height="34" src={center_left} width="24" />
 		{#each Array.from({ length: 9 }) as _, i}
-			<li><a class="track" href="/level_{i + 1}">level {i + 1}</a></li>
+			<li>
+				<a
+					class="track"
+					href="/level_{i + 1}"
+					aria-current={level === i + 1 ? "page" : undefined}>level {i + 1}</a>
+			</li>
 		{/each}
 		<img alt="" height="34" src={center_right} width="24" />
 	</ul>
@@ -39,7 +45,9 @@
 		user-select: all;
 		color: transparent;
 	}
-	.track:hover {
+	.track:hover,
+	.track:focus-visible,
+	ul:not(:has(:hover, :focus-visible)) .track[aria-current="page"] {
 		background: url(./center_on.gif);
 	}
 </style>
